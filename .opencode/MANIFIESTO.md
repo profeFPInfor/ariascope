@@ -9,7 +9,7 @@ La versión de cada pieza está en la propia pieza (línea «Versión: X.Y.Z»);
 |---|---|---|---|---|
 | agente | guia | 0.2.0 | probado en 2.2.6 (1 prueba) | Te guía paso a paso en las tareas de H1 (solo lectura) |
 | agente | documentador | 0.2.0 | no probado | Da forma de documentación a lo que tú aportas; escribe en `docs/`, `README.md` y `asistenciaIA/` solo si lo confirmas |
-| skill | crear-repositorio | 0.1.0 | probado en 2.2.6 (1 prueba) | Paso 0: repositorio público, README y los tres documentos |
+| skill | crear-repositorio | 0.2.0 | probado en 2.2.6 (1 prueba, de la versión 0.1.0) | Paso 0: repositorio público, README y los tres documentos |
 | skill | documento-inicio | 0.1.0 | no probado | Aclarar la idea y rellenar `00-documentoInicio.md` |
 | skill | soluciones-existentes | 0.1.0 | no probado | Paso 1: problema y soluciones existentes (`01b-sota.md`) |
 | skill | sector-y-empresas | 0.1.0 | no probado | Paso 2: sector, empresas y organigrama (`01-analisis.md`) |
