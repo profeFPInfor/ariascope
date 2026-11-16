@@ -15,6 +15,10 @@ Mientras la versión empiece por `0.`, la pieza está en prueba y puede cambiar 
 
 (vacío)
 
+## 2026-11-16 · una sola bitácora
+
+- **Corregido** `guia` 0.2.0 → **0.2.1** y `documentador` 0.2.0 → **0.2.1** (PARCHE): el uso de IA se anota en `asistenciaIA/bitacora.md`, no en `docs/declaracion-uso-ia.md` (que no llega en el ZIP de la semana 1).
+
 ## 2026-11-16 · base semanal en ZIP
 
 - **Cambiado** skill `crear-repositorio` 0.1.0 → **0.2.0** (MENOR): el paso 3 ya no copia plantillas del repositorio del curso; se **descarga el ZIP de la semana** y se sube su contenido (`docs/`, `.opencode/`, `asistenciaIA/`, `AGENTS.md`, `opencode.jsonc`). Añade el aviso de las carpetas ocultas.

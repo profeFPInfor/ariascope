@@ -7,8 +7,8 @@ La versión de cada pieza está en la propia pieza (línea «Versión: X.Y.Z»);
 
 | Tipo | Nombre | Versión | Estado | Para qué |
 |---|---|---|---|---|
-| agente | guia | 0.2.0 | probado en 2.2.6 (1 prueba) | Te guía paso a paso en las tareas de H1 (solo lectura) |
-| agente | documentador | 0.2.0 | no probado | Da forma de documentación a lo que tú aportas; escribe en `docs/`, `README.md` y `asistenciaIA/` solo si lo confirmas |
+| agente | guia | 0.2.1 | probado en 2.2.6 (1 prueba) | Te guía paso a paso en las tareas de H1 (solo lectura) |
+| agente | documentador | 0.2.1 | no probado | Da forma de documentación a lo que tú aportas; escribe en `docs/`, `README.md` y `asistenciaIA/` solo si lo confirmas |
 | skill | crear-repositorio | 0.2.0 | probado en 2.2.6 (1 prueba, de la versión 0.1.0) | Paso 0: repositorio público, README y los tres documentos |
 | skill | documento-inicio | 0.1.0 | no probado | Aclarar la idea y rellenar `00-documentoInicio.md` |
 | skill | soluciones-existentes | 0.1.0 | no probado | Paso 1: problema y soluciones existentes (`01b-sota.md`) |

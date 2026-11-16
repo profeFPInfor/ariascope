@@ -4,8 +4,8 @@
 
 | Pieza | Versión | Qué hace |
 |---|---|---|
-| Agente `guia` | 0.2.0 | Acompaña paso a paso. Solo lectura |
-| Agente `documentador` | 0.2.0 | Da forma de documentación; escribe en `docs/`, `README.md` y `asistenciaIA/` con confirmación |
+| Agente `guia` | 0.2.1 | Acompaña paso a paso. Solo lectura |
+| Agente `documentador` | 0.2.1 | Da forma de documentación; escribe en `docs/`, `README.md` y `asistenciaIA/` con confirmación |
 | Skill `crear-repositorio` | 0.2.0 | Paso 0: repositorio público, README y ficheros base del ZIP |
 | Skills de paso | 0.1.0 | `documento-inicio`, `soluciones-existentes`, `sector-y-empresas`, `necesidades-y-tipo` |
 | Skills de control | 0.1.0 | `comprobar-hecho-cuando`, `validar-estructura-semanal`, `auditar-fuentes` |
@@ -17,8 +17,8 @@
 
 ```mermaid
 flowchart LR
-    P["Persona"] --> G["guia 0.2.0"]
-    P --> D["documentador 0.2.0"]
+    P["Persona"] --> G["guia 0.2.1"]
+    P --> D["documentador 0.2.1"]
     G --> S["8 skills"]
     D --> S
     S --> V["semana-01.json"]

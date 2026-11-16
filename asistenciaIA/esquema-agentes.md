@@ -29,8 +29,8 @@ flowchart TD
 
 | Tipo | Nombre | Versión |
 |---|---|---|
-| agente | guia | 0.2.0 |
-| agente | documentador | 0.2.0 |
+| agente | guia | 0.2.1 |
+| agente | documentador | 0.2.1 |
 | skill | crear-repositorio | 0.2.0 |
 | skill | documento-inicio, soluciones-existentes, sector-y-empresas, necesidades-y-tipo, comprobar-hecho-cuando, auditar-fuentes | 0.1.0 |
 | skill | validar-estructura-semanal | 0.1.0 |
