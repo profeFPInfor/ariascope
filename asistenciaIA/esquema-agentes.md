@@ -31,9 +31,9 @@ flowchart TD
 |---|---|---|
 | agente | guia | 0.2.1 |
 | agente | documentador | 0.2.1 |
-| skill | crear-repositorio | 0.2.0 |
+| skill | crear-repositorio | 0.2.1 |
 | skill | documento-inicio, soluciones-existentes, sector-y-empresas, necesidades-y-tipo, comprobar-hecho-cuando, auditar-fuentes | 0.1.0 |
-| skill | validar-estructura-semanal | 0.1.0 |
+| skill | validar-estructura-semanal | 0.2.0 |
 | comando | paso, comprobar, documentar, validar, bitacora | 0.1.0 |
 
 ## Permisos de cada agente

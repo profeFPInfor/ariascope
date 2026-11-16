@@ -15,6 +15,11 @@ Mientras la versión empiece por `0.`, la pieza está en prueba y puede cambiar 
 
 (vacío)
 
+## 2026-11-16 · .gitignore en la base
+
+- **Cambiado** skill `validar-estructura-semanal` 0.1.0 → **0.2.0** (MENOR): la especificación `semana-01.json` (0.2.0) comprueba que existe `.gitignore` y que excluye `.env`.
+- **Cambiado** skill `crear-repositorio` 0.2.0 → **0.2.1** (PARCHE): el ZIP trae también `.gitignore` (excluye `.env` y claves); se explica que, como `.opencode`, es un fichero oculto.
+
 ## 2026-11-16 · una sola bitácora
 
 - **Corregido** `guia` 0.2.0 → **0.2.1** y `documentador` 0.2.0 → **0.2.1** (PARCHE): el uso de IA se anota en `asistenciaIA/bitacora.md`, no en `docs/declaracion-uso-ia.md` (que no llega en el ZIP de la semana 1).

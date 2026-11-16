@@ -5,7 +5,7 @@ description: "Valida la ESTRUCTURA del trabajo de una semana entera (ficheros, a
 
 # validar-estructura-semanal
 
-**Versión:** 0.1.0 · **Estado:** no probado
+**Versión:** 0.2.0 · **Estado:** probado en 2.2.6 (2 pruebas, de la versión 0.1.0)
 
 ## Objetivo
 
