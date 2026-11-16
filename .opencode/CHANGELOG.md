@@ -15,6 +15,14 @@ Mientras la versión empiece por `0.`, la pieza está en prueba y puede cambiar 
 
 (vacío)
 
+## 2026-11-16 · validación semanal y asistenciaIA
+
+- **Añadido** skill `validar-estructura-semanal` 0.1.0, con la especificación `references/semana-01.json` (0.1.0).
+- **Añadido** comandos `validar` 0.1.0 y `bitacora` 0.1.0.
+- **Probado** (2026-11-16, OpenCode 2.2.6, `deepseek-v4.1-flash-free`): `/validar semana-01` da «mínimo y completo cumplen» en este repositorio y «no cumplen» (13 y 3 controles) con las plantillas vacías, **igual que `scripts/validar_estructura.py`**.
+- **Cambiado** `guia` 0.1.0 → **0.2.0** (MENOR): incorpora la validación semanal y remite al `documentador` para la bitácora.
+- **Cambiado** `documentador` 0.1.0 → **0.2.0** (MENOR): puede escribir también en `asistenciaIA/`, con confirmación, y propone la fila de la bitácora.
+
 ## 2026-11-16 · primera versión
 
 - **Añadido** agentes `guia` 0.1.0 y `documentador` 0.1.0.

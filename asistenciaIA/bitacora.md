@@ -1,0 +1,16 @@
+# Bitácora del trabajo de los agentes
+
+Una fila por trabajo. Las más recientes, abajo. Si no se sabe algo: «pendiente».
+**Revisión humana** = alguien ha leído y comprobado el resultado (no solo lo ha ejecutado el agente).
+
+| Fecha | Agente y modelo | Qué se pidió | Qué se aceptó o cambió | Dónde quedó | Revisión humana |
+|---|---|---|---|---|---|
+| 2026-11-16 | Claude Code (Anthropic), con dos subagentes de investigación | Crear el README, los tres primeros documentos y la investigación de fuentes (sector, soluciones, marco legal) | Se **reabrieron las fuentes** (5 empresas, 7 soluciones, WebAIM, axe-core, WCAG-EM, título del BOE, AccessibleEU) y se coincidió con lo que decían los subagentes. Se **suavizaron 2 afirmaciones sobre WCAG-EM** que no estaban comprobadas. No se pudo verificar la entrada en vigor de la Ley 11/2023 | `README.md`, `docs/00-documentoInicio.md`, `docs/01b-sota.md`, `docs/01-analisis.md` | pendiente |
+| 2026-11-16 | Claude Code (Anthropic) | Crear `.opencode/` (agentes `guia` y `documentador`, 7 skills, 3 comandos), `AGENTS.md` y `opencode.jsonc`, con versión | Aceptado. Las 12 piezas se cargan en OpenCode 2.2.6 | `.opencode/`, `AGENTS.md`, `opencode.jsonc` | pendiente |
+| 2026-11-16 | `guia` (OpenCode) con `granite4.1:8b` local | «Guíame en el paso 0» | **Falló:** intentó usar la herramienta de preguntas, que no funciona en `opencode run`. Se descartó el modelo local para esta prueba | (sin ficheros) | pendiente |
+| 2026-11-16 | `guia` (OpenCode) con `opencode/deepseek-v4.1-flash-free` | «Guíame en el paso 0» (sin usar la herramienta de preguntas) | **Bien:** cargó la skill `crear-repositorio`, dio **un solo paso**, avisó de que el repositorio es público y cerró con las tres cosas de su formato | (sin ficheros) | pendiente |
+| 2026-11-16 | `guia` con `glm-5.3-flash-free`, `minimax-m3.1-flash-free` y `hy4-flash-free` | «Responde solo con OK» | Los tres respondieron en 1-3 s: quedan como **respaldos** | `opencode.jsonc` (comentario) | pendiente |
+| 2026-11-16 | Claude Code (Anthropic) | Crear la validación semanal (especificación `semana-01.json`, skill `validar-estructura-semanal`, script `scripts/validar_estructura.py`) y esta carpeta | Aceptado. El script da **mínimo y completo CUMPLE** en este repositorio y **NO cumple** con las plantillas vacías | `.opencode/skills/validar-estructura-semanal/`, `scripts/`, `asistenciaIA/` | pendiente |
+| 2026-11-16 | `guia` (OpenCode) con `opencode/deepseek-v4.1-flash-free` | `/validar semana-01` sobre este repositorio | **Bien:** cargó `validar-estructura-semanal`, leyó `semana-01.json` y los cuatro ficheros, y dio **mínimo y completo CUMPLE** con `fichero:línea`. Coincide con `scripts/validar_estructura.py` | (sin ficheros) | pendiente |
+| 2026-11-16 | `guia` (OpenCode) con `opencode/deepseek-v4.1-flash-free` | `/validar semana-01` sobre un repositorio con las plantillas **vacías** | **Bien:** **mínimo NO cumple** (13 controles) y **completo NO cumple** (3), igual que el script. Intentó un comando `grep` y se le **denegó** el permiso, como está previsto | (sin ficheros) | pendiente |
+

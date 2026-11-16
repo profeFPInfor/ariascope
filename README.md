@@ -15,3 +15,5 @@ Herramienta de línea de comandos de código abierto que analiza la accesibilida
 ## Cómo trabajamos con OpenCode
 
 Este proyecto se trabaja con [OpenCode](https://opencode.ai) desde el primer día: agentes, skills y comandos **con versión y registro de cambios** en [`.opencode/`](.opencode/README.md), y permisos mínimos en `opencode.jsonc`.
+
+La bitácora del trabajo de los agentes, el esquema de agentes de cada momento y los diagramas están en [`asistenciaIA/`](asistenciaIA/README.md).
