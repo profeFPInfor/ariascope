@@ -1,72 +1,79 @@
 # 00 · Documento de inicio del proyecto
 
-> **Plantilla.** Se rellena **en la sesión de Inicio (6-nov-2026)** y se afina hasta el **12-nov**, donde el tutor aprueba la propuesta. Es breve: una página. Si algo no lo sabes todavía, escribe «pendiente» y por qué. Borra las notas en cursiva al rellenar.
->
-> **No escribas datos personales sensibles** (teléfono, dirección, DNI) ni tu correo personal.
-
 ## 1. Datos del alumno/a
 
 | | |
 |---|---|
-| **Nombre** (real o alias, como prefieras: [por qué](publicacion-y-privacidad.md)) | |
-| **Usuario de GitHub** | |
-| **Repositorio del proyecto** | *enlace* |
+| **Nombre** | Tever (profesor del módulo; proyecto de referencia para el alumnado) |
+| **Usuario de GitHub** | devTever |
+| **Repositorio del proyecto** | https://github.com/devTever/ariascope |
 | **Ciclo y curso** | DAW, 2.º · curso 2026-27 |
-| **Fecha** | 2026-11-06 |
+| **Fecha** | 2026-11-16 |
 
 ## 2. Nombre del proyecto
 
-*Nombre provisional (puede cambiar). Una frase de qué es.*
+**AriaScope.** Herramienta de línea de comandos de código abierto que analiza la accesibilidad de páginas web.
 
 ## 3. Qué quiero hacer
 
-*Descríbelo con tus palabras, en 5 a 10 líneas: qué es, qué hace y cómo se usaría.*
+Una herramienta que se ejecuta desde la terminal: le das la dirección de una página web y te devuelve un informe de accesibilidad fácil de leer. Por debajo abre la página con un navegador automatizado (Playwright) y le pasa un motor de reglas de accesibilidad de código abierto (axe-core).
+
+La idea es que el informe separe con claridad **lo que se ha detectado como fallo** de **lo que una persona tiene que revisar a mano**, porque ninguna herramienta automática lo cubre todo. Se podrá usar a mano y, más adelante, en un proceso de integración continua (que falle si hay errores).
+
+Es un proyecto **de referencia**: sigue los mismos pasos y usa las mismas plantillas que el alumnado, para que se vea cómo queda cada documento terminado.
 
 ## 4. Qué problema o necesidad resuelve
 
-*¿Qué necesidad real del sector o de un colectivo cubre? ¿Cómo lo sabes (la has visto, hablaste con alguien, hay datos)? Anótalo, se desarrolla en `01-analisis.md`.*
+Quien desarrolla o gestiona una web pequeña tiene dificultad para comprobar si es accesible: las soluciones de pago que he consultado solo ofrecen pedir una demo (no publican precios) y las gratuitas son herramientas técnicas, que se usan desde la línea de comandos o desde las herramientas de desarrollo del navegador. Las fuentes están en `01b-sota.md` y el desarrollo, en `01-analisis.md`.
+
+Lo que **todavía no he comprobado** es si esta necesidad la sienten de verdad pymes o estudiantes (no he hablado con nadie del sector): queda como **pendiente**.
 
 ## 5. Para quién
 
-*Quién lo usaría (personas usuarias o clientes) y en qué contexto (empresa, asociación, uso personal...).*
+- **Estudiantes y desarrolladores junior** que quieren revisar la accesibilidad de sus propios proyectos.
+- **Pequeñas empresas y autónomos** con una web propia y sin presupuesto para herramientas de pago.
+
+Contexto de uso: sobre páginas **propias o de prueba**, desde un equipo personal o un servidor de integración continua.
 
 ## 6. Funcionalidades principales
 
-*Lista de 3 a 6 cosas que debe hacer. Marca cuáles son imprescindibles para una **primera versión mínima** (la que quieres tener funcionando antes del 31-mar).*
-
 | # | Funcionalidad | ¿Imprescindible? (sí / no) |
 |---|---|---|
-| 1 | | |
+| 1 | Analizar una dirección web y mostrar los fallos de accesibilidad detectados | sí |
+| 2 | Generar un informe legible (texto/Markdown) y otro en JSON | sí |
+| 3 | Separar «fallo detectado» de «a revisar a mano» | sí |
+| 4 | Analizar una lista de direcciones de un fichero | no |
+| 5 | Devolver un código de salida distinto de cero si hay fallos (para integración continua) | no |
 
 ## 7. Tecnologías previstas
 
-*Lenguajes, frameworks, base de datos, despliegue... Y cuáles ya conoces y cuáles tendrás que aprender.*
-
 | Tecnología | Para qué | Nivel actual (nada / algo / bien) |
 |---|---|---|
-| | | |
+| TypeScript y Node.js | Código de la herramienta | pendiente de concretar |
+| Playwright | Abrir y recorrer las páginas | pendiente de concretar |
+| axe-core | Reglas de accesibilidad | pendiente de concretar |
 
 ## 8. Dónde se integra con los módulos de 2.º
 
-*Marca los módulos de 2.º cuyos contenidos usarás de forma real en el proyecto (debe haber **al menos tres**).*
-
-- [ ] Desarrollo web en entorno cliente (0612)
+- [x] Desarrollo web en entorno cliente (0612): trabajo con el DOM y con JavaScript/TypeScript
 - [ ] Desarrollo web en entorno servidor (0613)
-- [ ] Despliegue de aplicaciones web (0614)
-- [ ] Diseño de interfaces web (0615)
+- [x] Despliegue de aplicaciones web (0614): publicación como paquete y ejecución en integración continua
+- [x] Diseño de interfaces web (0615): la accesibilidad como criterio de diseño
 
 ## 9. Datos y empresas
 
-- ¿El proyecto parte de una **empresa** (por ejemplo, de tus prácticas)? **Sí / No**. Si es sí: ¿tienes su **autorización escrita** para usar información suya? **Sí / No / En trámite**. Se plantea como un encargo simulado.
-- ¿Usará **datos personales reales**? **Debe ser que no**: usa datos de ejemplo.
+- ¿El proyecto parte de una **empresa** (por ejemplo, de tus prácticas)? **No.**
+- ¿Usará **datos personales reales**? **No.** Solo se analizan páginas propias o de prueba; no se almacenan datos de personas.
 
 ## 10. Riesgos y dudas iniciales
 
-*Lo que más te preocupa o no tienes claro (tiempo, tecnología, alcance...).*
+- **Alcance:** la comprobación automática no cubre toda la accesibilidad. La propia web de axe-core dice que «se puede encontrar de media un 57 % de los problemas de WCAG de forma automática» (dato **declarado** por ellos, sin contrastar). El informe tiene que explicarlo bien para no dar falsa seguridad.
+- **Tiempo:** aprender Playwright y axe-core a la vez.
+- **Competencia:** ya existen herramientas gratuitas y consolidadas; habrá que justificar qué aporta esta (ver `01b-sota.md`, apartado 5).
 
 ## 11. Qué espero aprender
 
-*Una o dos frases.*
+A conectar un navegador automatizado con un motor de reglas, a escribir un informe claro para personas no expertas y a publicar una herramienta de código abierto con su documentación.
 
 ---
 
