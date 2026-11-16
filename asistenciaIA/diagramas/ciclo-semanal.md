@@ -2,12 +2,12 @@
 
 ```mermaid
 flowchart LR
-    A["Descargo el ZIP\nde la semana"] --> B["Lo descomprimo y lo\nsubo a mi repositorio"]
-    B --> C["Trabajo con guia:\n/paso n"]
-    C --> D["Redacto, con ayuda de\ndocumentador si quiero"]
+    A["Descargo el ZIP<br/>de la semana"] --> B["Lo descomprimo y lo<br/>subo a mi repositorio"]
+    B --> C["Trabajo con guia:<br/>/paso n"]
+    C --> D["Redacto, con ayuda de<br/>documentador si quiero"]
     D --> E["/validar semana-NN"]
     E -->|"mínimo: no cumple"| C
-    E -->|"mínimo: cumple"| F["/bitacora:\nanoto lo que ha hecho la IA"]
+    E -->|"mínimo: cumple"| F["/bitacora:<br/>anoto lo que ha hecho la IA"]
     F --> G["Jueves: revisión en clase"]
 ```
 

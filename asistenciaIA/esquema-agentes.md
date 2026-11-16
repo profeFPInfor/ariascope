@@ -4,8 +4,8 @@
 
 ```mermaid
 flowchart TD
-    P["Persona"] -->|"/paso /comprobar /validar"| G["Agente guia\n(solo lectura)"]
-    P -->|"/documentar /bitacora"| D["Agente documentador\n(escribe con confirmación)"]
+    P["Persona"] -->|"/paso /comprobar /validar"| G["Agente guia<br/>(solo lectura)"]
+    P -->|"/documentar /bitacora"| D["Agente documentador<br/>(escribe con confirmación)"]
     G -->|"carga"| S["Skills por paso"]
     D -->|"usa"| S
     S --> S0["crear-repositorio"]
@@ -17,9 +17,9 @@ flowchart TD
     S --> S6["validar-estructura-semanal"]
     S --> S7["auditar-fuentes"]
     S6 -->|"lee"| E["references/semana-01.json"]
-    D -->|"con permiso"| F["docs/, README.md,\nasistenciaIA/"]
+    D -->|"con permiso"| F["docs/, README.md,<br/>asistenciaIA/"]
     G -.->|"nunca escribe"| F
-    M["Modelo: deepseek-v4.1-flash-free\n(+ 3 respaldos)"] --- G
+    M["Modelo: deepseek-v4.1-flash-free<br/>(+ 3 respaldos)"] --- G
     M --- D
 ```
 
