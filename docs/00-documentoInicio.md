@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Nombre** | Tever (profesor del módulo; proyecto de referencia para el alumnado) |
-| **Usuario de GitHub** | devTever |
-| **Repositorio del proyecto** | https://github.com/devTever/ariascope |
+| **Usuario de GitHub** | profeFPInfor |
+| **Repositorio del proyecto** | https://github.com/profeFPInfor/ariascope |
 | **Ciclo y curso** | DAW, 2.º · curso 2026-27 |
 | **Fecha** | 2026-11-16 |
 
