@@ -42,7 +42,7 @@
 |---|---|---|---|---|---|---|---|
 | [RELLENAR: p. ej. base de datos] | | | | | | | |
 
-*Cada decisión importante se convierte en una decisión registrada en [`decisiones/`](decisiones/0000-plantilla.md).*
+*Cada decisión importante se convierte en una decisión registrada en `decisiones/` (la plantilla llega con el bloque de H2).*
 
 ## 5. Hueco y diferenciación (CE 1e)
 
