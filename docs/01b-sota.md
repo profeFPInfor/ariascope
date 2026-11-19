@@ -4,7 +4,7 @@
 >
 > **Para qué sirve:** el **SOTA** (*state of the art*, estado del arte) es lo que ya existe hoy para resolver mi problema. Sirve para decidir qué aporta AriaScope y qué herramientas usar. Cada apartado responde a un **CE** (criterio de evaluación, 1a a 1i y 2a a 2b; el texto está al final).
 >
-> **Qué se entrega en H1:** los apartados **1, 2 y 5**. Los apartados 3, 4, 6, 7 y 8 se completan en H2.
+> **Qué se entrega en H1:** los apartados **1, 2 y 5**. Los apartados 3, 4, 6, 7 y 8 ya están rellenos como adelanto; se revisan en H2.
 >
 > **Cómo leerlo (5 minutos):** en las tablas, lo que dice la fuente va **sin marca** (es lo que ella *declara*, no lo he probado). Lo que pienso yo va marcado como **«opinión mía»** o **«deducción mía»**. `leído` = abrí la fuente; `sin leer` = no la abrí. Si no entiendes una sigla, mira el apartado 9.
 
@@ -123,6 +123,7 @@ Qué respalda cada fuente: **F1** respalda los apartados 1, 2 y 8; **F2**, los a
 | W3C | World Wide Web Consortium: organismo que publica los estándares de la web |
 | WCAG | Pautas de accesibilidad del contenido web que publica el W3C |
 | WCAG-EM | Método del W3C para evaluar la accesibilidad de una web en cinco pasos |
+| RF, RNF y REST | Requisito funcional (qué hace), no funcional (cómo lo hace) y restricción (límite impuesto); se definen en `01-analisis.md` |
 | CLI | Interfaz de línea de comandos: se usa escribiendo órdenes en una terminal |
 | API | Forma de usar un programa desde otro programa o desde código |
 | Integración continua (CI) | Proceso automático que ejecuta comprobaciones cada vez que se sube código al repositorio |

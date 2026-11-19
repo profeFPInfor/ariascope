@@ -221,7 +221,7 @@ flowchart LR
     G -.-> F
 ```
 
-**Cómo leerlo:** las fases 2 y 3 se solapan dos días (10 y 11-dic) y la 7 corre en paralelo a las fases 4, 5 y 6: es así en el calendario del curso. Las seis primeras fases van de izquierda a derecha y los hitos marcan las entregas. La fase 7 corre en paralelo desde febrero hasta junio (líneas de puntos).
+**Cómo leerlo:** las fechas de fin y de inicio de fases contiguas coinciden o se solapan unos días (26-nov, 10 y 11-dic, 21 y 22-ene) y la fase 7 corre en paralelo a las fases 4, 5 y 6: es así en el calendario del curso. Las seis primeras fases van de izquierda a derecha y los hitos marcan las entregas. La fase 7 corre en paralelo desde febrero hasta junio (líneas de puntos).
 
 ## 8. Glosario
 
