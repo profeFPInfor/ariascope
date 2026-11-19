@@ -136,14 +136,14 @@ Las restricciones REST-01 a REST-03 no cuelgan de un objetivo concreto: acotan t
 | Contrato y registro de jornada | Tiene personas contratadas | [Estatuto de los Trabajadores (RDL 2/2015)](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430), arts. 8 y 34.9 | `leído` (2026-11-19) |
 | Prevención de riesgos laborales (PRL) | Su plantilla trabaja con pantalla | [Ley 31/1995](https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292), arts. 14 a 16 | `leído` (2026-11-19) |
 | Protección de datos | Su web puede guardar datos de personas (AriaScope no los guarda: RNF-03) | [Ley Orgánica 3/2018](https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673) | `sin leer`: solo he leído el título |
-| Accesibilidad de productos y servicios | Si ofrece comercio electrónico a consumidores | [Ley 11/2023](https://www.boe.es/buscar/act.php?id=BOE-A-2023-11022), arts. 2 y 3.3 | `leído` solo el art. 2 (incluye «servicios de comercio electrónico») y el 3.3 (2026-11-19) |
+| Accesibilidad de productos y servicios | Si presta a consumidores alguno de los servicios del art. 2.2 (p. ej. comercio electrónico) y no es microempresa | [Ley 11/2023](https://www.boe.es/buscar/act.php?id=BOE-A-2023-11022), arts. 2 y 3.3 | `leído` solo el art. 2 y el 3, apartados 1 a 3 (2026-11-19) |
 
 **Qué dicen los artículos leídos** (resumen mío):
 
 - **Ley 37/1992:** el IVA grava las entregas de bienes y prestaciones de servicios que hacen empresarios y profesionales en su actividad.
 - **Estatuto de los Trabajadores:** el art. 34.9 obliga a la empresa a garantizar el registro diario de jornada, con el horario de inicio y fin de cada persona.
 - **Ley 31/1995:** la empresa debe proteger a su plantilla, evaluar los riesgos y planificar la prevención.
-- **Ley 11/2023, art. 3.3:** «las microempresas que presten servicios estarán exentas de cumplir los requisitos de accesibilidad». **Lo deduzco yo:** muchos clientes de AriaScope serían microempresas exentas de esa ley, así que la obligación legal no es su motor principal; no he comprobado qué otras normas les aplican (por ejemplo, para la administración pública).
+- **Ley 11/2023, arts. 2.2 y 3.3:** la obligación depende del **tipo de servicio** y del **tamaño**. El art. 2.2 lista los servicios dirigidos a consumidores a los que se aplica (entre ellos comercio electrónico, servicios bancarios, transporte de viajeros, comunicaciones electrónicas, agencias de viaje, suministros de energía, agua y gas, y redes sociales). El art. 3.3 dice que «las microempresas que presten servicios estarán exentas» de los requisitos de accesibilidad. **Lo deduzco yo:** una pyme pequeña o mediana que venda por internet a consumidores **sí** estaría obligada, y una microempresa **no**; que el cliente de AriaScope sea una u otra cambia la urgencia legal. No he leído la definición de «microempresa» ni los anexos técnicos, y la web de una empresa de un sector no listado quedaría fuera de esta ley.
 
 **Lo que AriaScope hace por sí mismo:** el proyecto es una herramienta gratuita de código abierto y no emite facturas, así que no le afecta la norma de facturación con software (Veri\*Factu). Si algún día cobrara por soporte o servicios, entrarían el IVA y la tributación de quien factura: **no lo he estudiado**.
 
