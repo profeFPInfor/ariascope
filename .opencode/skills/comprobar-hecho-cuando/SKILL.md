@@ -5,7 +5,7 @@ description: "Comprueba la ESTRUCTURA de un paso de H1 contra su «Hecho cuando�
 
 # comprobar-hecho-cuando
 
-**Versión:** 0.1.0 · **Estado:** no probado
+**Versión:** 0.2.0 · **Estado:** no probado
 
 ## Objetivo
 
@@ -21,6 +21,10 @@ Decir, casilla a casilla, **qué se cumple y qué falta** de un paso. Comprueba 
 | 2 | `docs/01-analisis.md` §1 | ≥ 5 empresas · enlace, fecha y estado · agrupación con nombre · empresa tipo · Mermaid válido · frase por departamento |
 | 3 | `docs/01-analisis.md` §2 | lista ordenada con fuente · criterio dicho · ≥ 1 dato con número, año, enlace y fecha · oportunidad valorada |
 | 4 | `docs/01-analisis.md` §3 | tipo elegido · ≥ 3 opciones comparadas · por qué se descartan ≥ 2 |
+| 5 | `docs/01-analisis.md` §4 | 2-4 objetivos `OBJ-xx` con su medida · tabla con RF, RNF y REST numerados · cada requisito con «Cómo se verifica» (o «pendiente») · cada RF y RNF en la matriz bajo un objetivo |
+| 6 | `docs/01-analisis.md` §5 y §6 | obligaciones fiscales, laborales y de prevención, cada una con norma, enlace y estado · ≥ 1 ayuda con convocatoria enlazada · quién puede pedirla, qué cubre, importe, plazo y abierta/cerrada · lo que no pude comprobar |
+| 7 | `docs/01-analisis.md` §7 y §8 | 7 fases con fecha · 3 hitos · 1-3 tareas por fase con responsable · glosario de 5 términos |
+| 8 | `docs/01b-sota.md` §5 | 3-5 líneas · qué no cubre ≥ 1 solución de su tabla · qué aporta el proyecto · reconoce dónde otras son mejores |
 
 ## Procedimiento
 
@@ -37,4 +41,4 @@ Decir, casilla a casilla, **qué se cumple y qué falta** de un paso. Comprueba 
 
 ## Cómo probarla
 
-Con `docs/01b-sota.md` sin rellenar, el paso 1 debe dar ❌ en casi todas las casillas, con líneas citadas.
+Con `docs/01b-sota.md` sin rellenar, el paso 1 debe dar ❌ en casi todas las casillas, con líneas citadas. Con `docs/01-analisis.md` sin rellenar, el paso 5 debe dar ❌ y citar la tabla del apartado 4.

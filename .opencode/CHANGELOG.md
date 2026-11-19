@@ -15,6 +15,18 @@ Mientras la versión empiece por `0.`, la pieza está en prueba y puede cambiar 
 
 (vacío)
 
+## 2026-11-19 · semana 2: pasos 5 a 8
+
+Conjunto 0.1.0 → **0.2.0**. Nada de esto se ha probado todavía con un modelo en OpenCode; la especificación de la semana 2 sí se ha probado con `scripts/validar_estructura.py` sobre un repositorio de ejemplo ficticio (lleno y vacío).
+
+- **Añadido** skills `objetivos-y-requisitos` 0.1.0 (paso 5), `obligaciones-y-ayudas` 0.1.0 (paso 6), `guion-de-trabajo` 0.1.0 (paso 7) y `aporte-del-proyecto` 0.1.0 (paso 8).
+- **Añadido** la especificación `references/semana-02.json` (0.1.0): pasos 5-8, `docs/registro-tutoria.md` y `docs/publicacion-y-privacidad.md`.
+- **Cambiado** skill `validar-estructura-semanal` 0.2.0 → **0.3.0** (MENOR): añade la semana 2 a su tabla y notas sobre lo que el JSON no comprueba.
+- **Cambiado** skill `comprobar-hecho-cuando` 0.1.0 → **0.2.0** (MENOR): añade las casillas de los pasos 5 a 8.
+- **Cambiado** skill `necesidades-y-tipo` 0.1.0 → **0.1.1** (PARCHE): el hueco de `01b-sota.md` pasa a la skill `aporte-del-proyecto`.
+- **Cambiado** `guia` 0.2.1 → **0.3.0** (MENOR): conoce los pasos 5 a 8 y la semana 2.
+- **Cambiado** comandos `paso`, `comprobar` y `validar` 0.1.0 → **0.2.0** (MENOR): admiten los pasos 5 a 8 y `semana-02`.
+
 ## 2026-11-16 · .gitignore en la base
 
 - **Cambiado** skill `validar-estructura-semanal` 0.1.0 → **0.2.0** (MENOR): la especificación `semana-01.json` (0.2.0) comprueba que existe `.gitignore` y que excluye `.env`.

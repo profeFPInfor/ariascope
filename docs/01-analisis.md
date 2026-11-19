@@ -1,5 +1,13 @@
 # 01 · Análisis y documentación inicial (RA1)
 
+> **Estado:** borrador de la semana 2 (2026-11-19). Todavía no lo ha revisado el tutor.
+>
+> **Para qué sirve:** es el análisis de AriaScope y la evidencia del **RA1** (resultado de aprendizaje 1). Se entrega en el hito **H1** (26-nov-2026). Cada apartado responde a un **CE** (criterio de evaluación, de 1a a 1i): el número está en el título y el texto literal de los nueve, al final del documento.
+>
+> **Cómo leerlo (5 minutos):** los apartados 1 a 3 son de la semana 1; los **4 a 8** son los de la semana 2 (requisitos, obligaciones, ayuda, guion y glosario). Las marcas significan: `leído` = abrí esa fuente; `sin leer` = no la abrí; **«opinión mía»** o **«deducción mía»** = no lo dice ninguna fuente; **«pendiente»** = falta por hacer o comprobar.
+>
+> **Si no entiendes una sigla** (por ejemplo CNAE, BDNS o VPAT), mira el glosario del apartado 8. Si sigues atascado, escribe al tutor por correo.
+
 ## 1. Sector y empresas (CE 1a, 1b)
 
 **Sector:** accesibilidad digital: empresas que venden software y servicios para que webs y aplicaciones cumplan las pautas WCAG y la norma europea EN 301 549. Código CNAE: **pendiente de localizar** en el INE.
@@ -61,6 +69,7 @@ Funciones (deducidas):
 
 - Casi todas las webs analizadas tienen fallos que una herramienta automática ya detecta, así que hay trabajo por hacer.
 - La Comisión Europea indica que el Acta Europea de Accesibilidad se aplica desde el 28 de junio de 2025 y alcanza, entre otros, a sitios web y aplicaciones móviles de determinados servicios (https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en · 2026-11-16 · `leído`). España la traspone con la Ley 11/2023, de 8 de mayo (https://www.boe.es/buscar/act.php?id=BOE-A-2023-11022 · 2026-11-16 · `leído` el título y la fecha de publicación).
+- **Quién está obligado varía.** Según la Ley 11/2023 (arts. 2.2 y 3.3; detalle y dudas en el apartado 5), depende de qué servicio presta la empresa a consumidores y de su tamaño. Las administraciones públicas tienen otra norma (Real Decreto 1112/2018). Qué clientes concretos tendría AriaScope: **no lo sé**.
 - **Lo que no sé:** cuántas pymes lo necesitan y si les basta una herramienta gratuita. Queda **pendiente** de contrastar con datos de INE u ONTSI y con personas del sector.
 
 ## 3. Tipo de proyecto elegido (CE 1e)
@@ -79,45 +88,169 @@ Comparación con los mismos criterios (valoración mía):
 
 ## 4. Requisitos y restricciones (CE 1f)
 
-*Características que debe cumplir el proyecto, redactadas de forma **verificable** (no «debe ser rápido», sino «responde en menos de 2 s»). Parte de lo que has encontrado en [`01b-sota.md`](01b-sota.md).*
+### Requisitos
 
-> **Guía.** Numera los requisitos **funcionales** como **RF-01, RF-02…** (qué hace el sistema) y los **no funcionales** como **RNF-01…** (cómo lo hace: rendimiento, seguridad, usabilidad, disponibilidad, accesibilidad). Las **restricciones** (plazo, presupuesto, tecnología obligatoria, normativa) como **REST-01…**. Cada requisito debe tener **una medida o una prueba**. Si aún no sabes cómo lo probarás, escribe «pendiente» y complétalo antes de H3.
+Parto de las funcionalidades de [`00-documentoInicio.md`](00-documentoInicio.md) y de lo encontrado en [`01b-sota.md`](01b-sota.md). Los umbrales numéricos son **propuestas mías** que mediré en H2 y H3.
 
 | ID | Requisito | Tipo (funcional / no funcional / restricción) | Cómo se verifica |
 |---|---|---|---|
-| RF-01 | [RELLENAR] | funcional | |
-| RNF-01 | [RELLENAR] | no funcional | |
-| REST-01 | [RELLENAR] | restricción | |
+| RF-01 | Dada una dirección `http` o `https`, la herramienta abre la página con Playwright, ejecuta axe-core y muestra los fallos detectados | funcional | Sobre la [página de prueba](../pruebas/pagina-prueba/README.md) (3 fallos conocidos y 1 resultado a revisar a mano), el informe lista los 3 fallos |
+| RF-02 | Genera el informe en Markdown y en JSON | funcional | Se crean los dos ficheros y el JSON se puede leer con un analizador de JSON sin error |
+| RF-03 | El informe separa «fallo detectado» (resultados `violations` de axe-core) de «a revisar a mano» (resultados `incomplete`) | funcional | Sobre la misma página de prueba, cada grupo aparece en su sección y ningún resultado está en las dos |
+| RF-04 | Analiza una lista de direcciones leída de un fichero (no imprescindible) | funcional | Con un fichero de 3 direcciones se generan 3 informes |
+| RF-05 | Devuelve un código de salida distinto de cero si hay fallos detectados (no imprescindible) | funcional | El código de salida (número que la orden devuelve al terminar; en la terminal se ve con `echo $?`) vale 0 en una página sin fallos y distinto de 0 en una con fallos |
+| RNF-01 | Usabilidad: cada fallo indica la regla, el elemento afectado y un enlace a su explicación | no funcional | Una persona no especialista explica con sus palabras 3 fallos del informe sin ayuda (pendiente de buscar a esa persona) |
+| RNF-02 | Rendimiento: analiza una página en menos de 60 s con conexión doméstica | no funcional | Se cronometran 10 ejecuciones sobre páginas de prueba; el umbral es propuesta mía y **pendiente de medir** |
+| RNF-03 | Privacidad: no guarda datos personales ni envía información a terceros; solo se conecta a la dirección analizada | no funcional | Revisión del código y del tráfico de red en una ejecución (pendiente) |
+| RNF-04 | Honestidad: el informe avisa de que el análisis automático no cubre toda la accesibilidad | no funcional | El texto del aviso aparece en los informes Markdown y JSON |
+| REST-01 | Plazo: primera versión mínima funcional antes de H3 (7-may-2027) | restricción | Existe la etiqueta (tag) `h3` de Git con RF-01 a RF-03 funcionando |
+| REST-02 | Tecnología: TypeScript y Node.js, Playwright y axe-core, todas de código abierto y sin servicios de pago | restricción | `package.json` lista solo esas dependencias y sus licencias son de código abierto (pendiente de comprobar cada licencia) |
+| REST-03 | Uso: solo se analizan páginas propias o de prueba | restricción | El `README.md` lo indica y las pruebas usan solo páginas de prueba propias |
+
+### Objetivos
+
+| ID | Objetivo | Cómo se mide |
+|---|---|---|
+| OBJ-01 | Que una persona no especialista analice la accesibilidad de una página web desde la terminal con un solo comando | En una página de prueba propia, un solo comando devuelve el informe sin más configuración (prueba de aceptación) |
+| OBJ-02 | Que el informe separe lo detectado como fallo de lo que hay que revisar a mano | En una página de prueba con fallos conocidos, el informe muestra los dos grupos en secciones distintas (sí/no) |
+| OBJ-03 | Poder usar la herramienta en integración continua | En un flujo de GitHub Actions de prueba, el trabajo falla si hay fallos y pasa si no los hay |
+| OBJ-04 | Publicarla como código abierto con documentación suficiente | Una persona ajena al proyecto la instala y la ejecuta siguiendo solo el `README.md` (prueba con 1 persona) |
 
 ### Matriz de trazabilidad
 
-*Une cada objetivo con sus requisitos, y estos con lo que los implementa y los comprueba. Se rellena por completo al final del proyecto; en H1 basta con **objetivo y requisito**.*
-
-> **Guía.** Ejemplo ficticio: *OBJ-01 Gestionar citas → RF-02 Crear una cita → CU-03 → `POST /citas` → prueba P-07.* Cada RF y cada RNF de la tabla anterior debe aparecer aquí.
+Cada fila se lee así: el **objetivo** (lo que quiero conseguir) se concreta en un **requisito** (lo que debe cumplir la herramienta); las otras tres columnas dicen dónde se verá y cómo se comprobará. En H1 solo se unen objetivo y requisito. El resto se completa en H2 y H3; `ariascope <url>` es un **nombre provisional** de la orden.
 
 | Objetivo | Requisito | Caso de uso | Pantalla o endpoint | Prueba o indicador |
 |---|---|---|---|---|
-| OBJ-01 [RELLENAR] | RF-01 | | | pendiente |
+| OBJ-01 | RF-01 | pendiente | orden `ariascope <url>` | pendiente |
+| OBJ-01 | RNF-01 | pendiente | informe | pendiente |
+| OBJ-01 | RNF-02 | pendiente | orden `ariascope <url>` | pendiente |
+| OBJ-02 | RF-03 | pendiente | informe | pendiente |
+| OBJ-02 | RNF-04 | pendiente | informe | pendiente |
+| OBJ-03 | RF-05 | pendiente | código de salida | pendiente |
+| OBJ-03 | RF-04 | pendiente | orden con fichero de direcciones | pendiente |
+| OBJ-04 | RF-02 | pendiente | ficheros de informe | pendiente |
+| OBJ-04 | RNF-03 | pendiente | código y red | pendiente |
+
+Las restricciones REST-01 a REST-03 no cuelgan de un objetivo concreto: acotan todo el proyecto.
 
 ## 5. Obligaciones fiscales, laborales y de prevención (CE 1g)
 
-*Las obligaciones que aplican a tu proyecto, **con su norma** y sus condiciones.*
+**A quién ayuda el proyecto (perfil supuesto, opinión mía):** una pyme o un autónomo de Asturias con una web propia y una o dos personas contratadas, que trabajan con pantalla. No he hablado con ninguna, así que el perfil no está contrastado. Texto leído en el BOE el 2026-11-19.
+
+| Obligación | Por qué le toca | Norma (con enlace) | Estado |
+|---|---|---|---|
+| IVA y facturas | Vende productos o servicios | [Ley 37/1992, del IVA](https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740), arts. 1, 4 y 5 | `leído` (2026-11-19) |
+| Impuesto sobre la renta o sobre sociedades | Tributa según sea autónomo o sociedad | [Ley 35/2006, del IRPF](https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764) y [Ley 27/2014, del Impuesto sobre Sociedades](https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328), art. 1 de cada una | `leído` solo el art. 1 de cada una (2026-11-19) |
+| Contrato y registro de jornada | Tiene personas contratadas | [Estatuto de los Trabajadores (RDL 2/2015)](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430), arts. 8 y 34.9 | `leído` (2026-11-19) |
+| Prevención de riesgos laborales (PRL) | Su plantilla trabaja con pantalla | [Ley 31/1995](https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292), arts. 14 a 16 | `leído` (2026-11-19) |
+| Protección de datos | Su web puede guardar datos de personas (AriaScope no los guarda: RNF-03) | [Ley Orgánica 3/2018](https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673) | `sin leer`: solo he leído el título |
+| Accesibilidad de productos y servicios | Si presta a consumidores alguno de los servicios del art. 2.2 (p. ej. comercio electrónico) y no es microempresa | [Ley 11/2023](https://www.boe.es/buscar/act.php?id=BOE-A-2023-11022), arts. 2 y 3.3 | `leído` solo el art. 2 y el 3, apartados 1 a 3 (2026-11-19) |
+| Accesibilidad de webs y apps del sector público | Si el cliente es una administración, un ente del sector público o está financiado con fondos públicos | [Real Decreto 1112/2018](https://www.boe.es/buscar/act.php?id=BOE-A-2018-12699), arts. 1 a 3 | `leído` los arts. 1 a 3 (2026-11-19); lo de la financiación pública, que la disposición adicional primera recoge, solo por un resumen de fuente secundaria |
+
+**Qué dicen los artículos leídos** (resumen mío):
+
+- **Ley 37/1992:** el IVA grava las entregas de bienes y prestaciones de servicios que hacen empresarios y profesionales en su actividad.
+- **Estatuto de los Trabajadores:** el art. 34.9 obliga a la empresa a garantizar el registro diario de jornada, con el horario de inicio y fin de cada persona.
+- **Ley 31/1995:** la empresa debe proteger a su plantilla, evaluar los riesgos y planificar la prevención.
+- **Ley 11/2023, arts. 2.2 y 3.3:** la obligación depende del **tipo de servicio** y del **tamaño**. Solo alcanza a servicios dirigidos a **consumidores**, y en algunos solo a una parte (art. 2.2, según lo leído el 2026-11-19):
+
+  **Se aplica al servicio completo:** comunicaciones electrónicas (salvo las de máquina a máquina), acceso a servicios audiovisuales, servicios bancarios a consumidores, libros electrónicos, comercio electrónico (el texto leído lo cita sin más detalle) y redes sociales.
+
+  **Se aplica solo a la web y a las apps:** electricidad, agua y gas a consumidores, y agencias de viajes y turoperadores. En el transporte de viajeros (aéreo, autobús, ferrocarril y marítimo) se añaden los billetes electrónicos, la información de viaje y los terminales interactivos; el transporte urbano y regional tiene un caso especial que no he podido identificar.
+
+  **Lo que dice la ley:** el art. 3.3 afirma que «las microempresas que presten servicios estarán exentas» de los requisitos.
+
+  **Lo que deduzco yo:** una pyme pequeña o mediana que venda por internet a consumidores sí estaría obligada y una microempresa no. Una web de un sector que no está en la lista no entra en esta ley, aunque otras normas podrían afectarle: no las he buscado.
+
+  **Lo que no he leído:** la definición de «microempresa» (la ley la usa sin definirla en los artículos que leí) ni los anexos técnicos.
+
+**Lo que AriaScope hace por sí mismo:** el proyecto es una herramienta gratuita de código abierto y no emite facturas, así que no le afecta la norma de facturación con software (Veri\*Factu). Si algún día cobrara por soporte o servicios, entrarían el IVA y la tributación de quien factura: **no lo he estudiado**.
+
+**Lo que no pude comprobar:**
+
+- **Alta en la Seguridad Social y convenio colectivo:** no los he buscado; el convenio dependería de la actividad de cada cliente (se consulta en el REGCON, Registro de Convenios Colectivos).
+- **Otras normas de PRL**, como el real decreto sobre trabajo con pantallas: no leídas.
+- **Ley 11/2023:** leí solo parte del texto (artículos 2 y 3). No he leído las disposiciones transitorias, la definición de «microempresa» ni los anexos técnicos, ni si hay sanciones ni quién vigila el cumplimiento.
+- **Real Decreto 1112/2018:** no he leído la disposición adicional primera (financiación pública) ni las modificaciones posteriores. No he comprobado otras normas sectoriales de accesibilidad.
+- **Cuántos clientes** del perfil supuesto existen de verdad.
 
 ## 6. Ayudas y subvenciones (CE 1h)
 
-*Al menos **una** ayuda real: fuente, requisitos y plazo.*
+**Ayuda elegida: subvenciones para la mejora de la competitividad, innovación y digitalización del pequeño y mediano comercio (Asturias, 2026).**
+
+| Dato | Contenido |
+|---|---|
+| Convocatoria | Resolución de 1 de julio de 2026 de la Consejería de Ciencia, Industria y Empleo. Extracto en el [BOPA núm. 133, de 13-VII-2026](https://www.asturias.es/bopa/2026/07/13/2026-05798.pdf) (Cód. 2026-05798). Texto completo en la [BDNS, código 916969](https://www.infosubvenciones.es/bdnstrans/GE/es/convocatoria/916969) |
+| Quién puede pedirla | Pymes comerciales con establecimiento en Asturias y domicilio social y fiscal en Asturias; también ciertas cooperativas y SAT de núcleos rurales |
+| Qué cubre | **Línea 2: nuevas tecnologías e innovación**: comercio electrónico, sistemas integrados de gestión y «mejora de la imagen digital». El extracto **no dice** si una auditoría de accesibilidad entra en esos conceptos |
+| Cuánto | Hasta el **50 %** de la inversión subvencionable (80 % con relevo generacional). Total de la convocatoria: 355.000 € |
+| Plazo | Desde el día siguiente al 13-jul-2026 hasta **un mes después**. Calculo que terminó a mediados de agosto de 2026 (fecha exacta no comprobada) |
+| Cómo se solicita | Solo por vía telemática, en la sede electrónica del Principado, procedimiento AYUD0351T01 |
+| Estado | **Cerrada** (consultada el 2026-11-19). No he comprobado si habrá una convocatoria nueva |
+
+**Para qué sirve a AriaScope:** no la pediría AriaScope (es gratuita y no tiene presupuesto de inversión), sino un cliente comercial que quisiera revisar o mejorar su web. Es un indicio de que hay ayudas a la digitalización del comercio, no de que cubran accesibilidad.
+
+**Descartada tras leerla:** la [convocatoria de ayudas para el impulso empresarial](https://www.asturias.es/bopa/2026/06/01/2026-03264.pdf) (BDNS 900148, BOPA de 1-VI-2026) da el 50 % hasta 10.000 €, pero su extracto dice que **no son subvencionables la compra de material informático ni teléfonos móviles**, y el plazo era de 10 días hábiles desde su publicación: también está cerrada.
+
+**Lo que no pude comprobar:**
+
+- Las **bases reguladoras** de la ayuda elegida (Resolución de 26-may-2025, BOPA de 10-jun-2025, según el extracto): `sin leer`; solo he leído el extracto de la convocatoria.
+- Si hay una **nueva convocatoria** en 2027 y con qué fechas.
+- Otras vías (SEKUENS, Asturias Emprende): no las he revisado a fondo.
 
 ## 7. Guion de trabajo (CE 1i)
 
-*Fases, hitos y responsables del proyecto. Puede enlazar al tablero de GitHub Projects.*
+Fechas copiadas de `docs/fases-del-proyecto.md` del repositorio del curso el 2026-11-19; son **provisionales** hasta que se apruebe el calendario del centro. No hay tablero de GitHub Projects todavía: **pendiente**.
+
+| Fase | Fechas | Tareas principales | Responsable | Hito |
+|---|---|---|---|---|
+| 1 Análisis | 6-nov a 26-nov-2026 | Sector, necesidades, requisitos, obligaciones y ayudas | Tever; el tutor revisa el PR | **H1 26-nov** |
+| 2 Diseño | 26-nov a 10-dic-2026 | Viabilidad, alcance, arquitectura de la herramienta, formato del informe | Tever; el tutor revisa el 10-dic | sin hito |
+| 3 Planificación | 10-dic-2026 a 21-ene-2027 | Cronograma, riesgos y presupuesto | Tever | **H2 21-ene** |
+| 4 Implementación | 21-ene a 31-mar-2027 | RF-01 a RF-03 (versión mínima), después RF-04 y RF-05 | Tever | sin hito |
+| 5 Pruebas | 1-abr a 23-abr-2027 | Plan de pruebas con páginas de prueba propias y corrección de fallos | Tever | sin hito |
+| 6 Despliegue | 26-abr a 7-may-2027 | Publicar el paquete y el flujo de integración continua; guía de uso | Tever | **H3 7-may** |
+| 7 Seguimiento y cierre | 11-feb a 18-jun-2027 | Registro semanal, memoria y defensa | Tever; el tutor evalúa | sin hito |
+
+```mermaid
+flowchart LR
+    A["Análisis<br/>H1 26-nov"] --> B["Diseño"] --> C["Planificación<br/>H2 21-ene"] --> D["Implementación"] --> E["Pruebas"] --> F["Despliegue<br/>H3 7-may"]
+    G["Seguimiento y cierre<br/>11-feb a 18-jun"] -.-> D
+    G -.-> E
+    G -.-> F
+```
+
+**Cómo leerlo:** cada fase empieza el mismo día en que acaba la anterior (26-nov, 10-dic y 21-ene) y la fase 7 corre en paralelo a las fases 4, 5 y 6, según `docs/fases-del-proyecto.md` del curso. Las seis primeras fases van de izquierda a derecha y los hitos marcan las entregas. La fase 7 corre en paralelo desde febrero hasta junio (líneas de puntos).
 
 ## 8. Glosario
 
-*Una cosa, un nombre: define los términos del dominio y de tu proyecto, y anota los sinónimos que **no** vas a usar en ningún documento. Con **5 términos** basta; crece con el proyecto.*
+Los sinónimos de la tercera columna son **decisiones mías** para que todos los documentos usen una sola palabra.
 
 | Término | Definición | Sinónimos que NO uso |
 |---|---|---|
-| [RELLENAR] | | |
+| WCAG | Pautas de accesibilidad de contenido web del W3C (Web Content Accessibility Guidelines) | «normas de accesibilidad» sin más |
+| EN 301 549 | Norma europea de requisitos de accesibilidad de productos y servicios de tecnologías de la información | «norma ISO» |
+| axe-core | Motor de reglas de accesibilidad de código abierto (de Deque) que AriaScope usa para analizar las páginas | «el validador» |
+| Playwright | Biblioteca que controla un navegador de forma automática para abrir las páginas | «el scraper» |
+| Fallo detectado | Problema que el motor de reglas confirma sin ayuda de una persona (en axe-core, `violations`) | «error», «bug», «warning» |
+| A revisar a mano | Resultado que el motor no puede decidir y que una persona debe comprobar (en axe-core, `incomplete`) | «aviso», «posible fallo» |
+| Integración continua | Proceso automático que ejecuta comprobaciones cada vez que se sube código al repositorio | «CI/CD» sin explicar |
+| CE | Criterio de evaluación: cada una de las nueve cosas (1a a 1i) que se evalúan en H1. Están al final del documento | — |
+| RA1 | Resultado de aprendizaje 1 del módulo; agrupa los criterios 1a a 1i | — |
+| H1, H2, H3 | Los tres hitos de entrega: 26-nov-2026, 21-ene-2027 y 7-may-2027 | «entregas» sin más |
+| CNAE | Clasificación Nacional de Actividades Económicas, el código que da el INE a cada actividad | — |
+| INE y ONTSI | INE: Instituto Nacional de Estadística. ONTSI: Observatorio Nacional de Tecnología y Sociedad, fuente pública de datos sobre digitalización | — |
+| BOE, BOPA y BDNS | Boletín Oficial del Estado, Boletín Oficial del Principado de Asturias y Base de Datos Nacional de Subvenciones: donde se publican las leyes y las ayudas | — |
+| VPAT | Voluntary Product Accessibility Template: documento en el que un fabricante declara cómo cumple su producto los requisitos de accesibilidad | — |
+| ENAC | Entidad Nacional de Acreditación: organismo que acredita a las entidades que evalúan o certifican | — |
+| IRPF y SAT | IRPF: Impuesto sobre la Renta de las Personas Físicas. SAT: sociedad agraria de transformación, un tipo de entidad agraria | — |
+| Pyme y microempresa | Pyme: pequeña y mediana empresa. Microempresa: la más pequeña de las categorías; **no he leído su definición legal** | — |
+| RF, RNF y REST | Requisito funcional (qué hace), no funcional (cómo lo hace) y restricción (límite impuesto: plazo, tecnología…) | «REST» como API REST |
+| Código de salida | Número que una orden devuelve al terminar: 0 suele significar «todo bien» y otro valor, que hubo un problema | — |
+| Etiqueta (tag) de Git | Marca fija que señala una versión concreta del repositorio, por ejemplo la que se entrega en un hito | — |
+| JSON | Formato de texto para guardar datos de forma que un programa los pueda leer | — |
+| Pull Request | Propuesta de cambio en GitHub: el tutor la revisa antes de que se integre en la rama principal `main` | «PR» sin explicar |
 
 ---
 
