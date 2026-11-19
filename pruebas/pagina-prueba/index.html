@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Página de prueba de accesibilidad</title>
+</head>
+<body>
+<!--
+  Página de prueba de AriaScope. Los fallos son INTENCIONADOS: no los corrijas.
+  Qué debe detectar una herramienta: ver README.md de esta carpeta.
+  Las imágenes logo.png y fondo.png no existen a propósito.
+-->
+<main>
+<h1>Página de prueba</h1>
+
+<!-- Fallo 1: imagen sin texto alternativo -->
+<img src="logo.png">
+
+<!-- Fallo 2: texto con poco contraste (gris claro sobre blanco) -->
+<p style="color:#bbbbbb;background:#ffffff">Texto gris claro sobre fondo blanco.</p>
+
+<!-- Fallo 3: campo de formulario sin etiqueta -->
+<input type="text" name="correo">
+
+<!-- A revisar a mano: el contraste sobre una imagen de fondo no se puede calcular solo -->
+<div style="background-image:url(fondo.png);color:#777">Texto sobre una imagen de fondo.</div>
+
+<a href="https://example.org">enlace</a>
+</main>
+</body>
+</html>

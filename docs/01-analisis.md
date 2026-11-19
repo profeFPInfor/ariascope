@@ -94,7 +94,7 @@ Parto de las funcionalidades de [`00-documentoInicio.md`](00-documentoInicio.md)
 
 | ID | Requisito | Tipo (funcional / no funcional / restricción) | Cómo se verifica |
 |---|---|---|---|
-| RF-01 | Dada una dirección `http` o `https`, la herramienta abre la página con Playwright, ejecuta axe-core y muestra los fallos detectados | funcional | Sobre una página de prueba con 3 fallos conocidos (**todavía no existe**: se creará en la fase de Pruebas), el informe los lista los 3 |
+| RF-01 | Dada una dirección `http` o `https`, la herramienta abre la página con Playwright, ejecuta axe-core y muestra los fallos detectados | funcional | Sobre la [página de prueba](../pruebas/pagina-prueba/README.md) (3 fallos conocidos y 1 resultado a revisar a mano), el informe lista los 3 fallos |
 | RF-02 | Genera el informe en Markdown y en JSON | funcional | Se crean los dos ficheros y el JSON se puede leer con un analizador de JSON sin error |
 | RF-03 | El informe separa «fallo detectado» (resultados `violations` de axe-core) de «a revisar a mano» (resultados `incomplete`) | funcional | Sobre la misma página de prueba, cada grupo aparece en su sección y ningún resultado está en las dos |
 | RF-04 | Analiza una lista de direcciones leída de un fichero (no imprescindible) | funcional | Con un fichero de 3 direcciones se generan 3 informes |
