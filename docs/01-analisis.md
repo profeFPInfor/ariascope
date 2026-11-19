@@ -61,6 +61,7 @@ Funciones (deducidas):
 
 - Casi todas las webs analizadas tienen fallos que una herramienta automática ya detecta, así que hay trabajo por hacer.
 - La Comisión Europea indica que el Acta Europea de Accesibilidad se aplica desde el 28 de junio de 2025 y alcanza, entre otros, a sitios web y aplicaciones móviles de determinados servicios (https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en · 2026-11-16 · `leído`). España la traspone con la Ley 11/2023, de 8 de mayo (https://www.boe.es/buscar/act.php?id=BOE-A-2023-11022 · 2026-11-16 · `leído` el título y la fecha de publicación).
+- **Quién está obligado depende del tipo de servicio y del tamaño** (Ley 11/2023, arts. 2.2 y 3.3, apartado 5 de este documento): una pyme pequeña o mediana que venda por internet a consumidores sí lo está, y una microempresa no. Por eso la urgencia legal varía según el cliente al que apunte AriaScope; **no he comprobado** qué clientes concretos serían.
 - **Lo que no sé:** cuántas pymes lo necesitan y si les basta una herramienta gratuita. Queda **pendiente** de contrastar con datos de INE u ONTSI y con personas del sector.
 
 ## 3. Tipo de proyecto elegido (CE 1e)
