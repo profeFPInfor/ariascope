@@ -5,7 +5,7 @@ description: "Comprueba la ESTRUCTURA de un paso de H1 contra su «Hecho cuando�
 
 # comprobar-hecho-cuando
 
-**Versión:** 0.2.0 · **Estado:** no probado
+**Versión:** 0.2.1 · **Estado:** probado en 2.2.6 (2 simulaciones el 2026-11-19, la 2.ª con esta versión)
 
 ## Objetivo
 
@@ -32,6 +32,7 @@ Decir, casilla a casilla, **qué se cumple y qué falta** de un paso. Comprueba 
 2. Para **cada casilla**: ✅ si lo ves, ❌ si no está, ❓ si no puedes comprobarlo. **Cita la línea** (`fichero:línea`).
 3. Revisa tablas Markdown: mismas columnas en cabecera, separador y filas.
 4. Termina con **una sola acción** que la persona puede hacer ahora.
+5. **Si lo que falta en el fichero ya lo escribió la persona en la conversación**, reimprime sus filas o su texto **con sus palabras exactas** (no con marcadores) para que solo tenga que pegarlos, y dilo: «son tus palabras».
 
 ## Qué NO haces
 

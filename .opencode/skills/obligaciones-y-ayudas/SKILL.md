@@ -5,7 +5,7 @@ description: "Guía el paso 6: obligaciones fiscales, laborales y de prevención
 
 # obligaciones-y-ayudas
 
-**Versión:** 0.1.0 · **Estado:** no probado
+**Versión:** 0.1.1 · **Estado:** probado en 2.2.6 (simulación del 2026-11-19, de la versión 0.1.0)
 
 ## Objetivo
 
@@ -38,6 +38,7 @@ Que la persona rellene los apartados **5 y 6** de `docs/01-analisis.md` (criteri
 - **No inventes** normas, artículos, plazos, importes ni ayudas. Una IA puede inventarlos: la persona abre cada fuente y comprueba que existe y dice eso.
 - Una web de gestoría o un blog sirven para entender, no como fuente: se cita la norma o la convocatoria.
 - Si algo no se puede comprobar: `sin leer` o «no comprobada».
+- **Pregunta por cada fuente si la abrió y la leyó** (la norma, el extracto, las bases). `leído` solo si lo dice ella; si leyó solo una parte, anótala («leído solo el art. 1»).
 - Proyecto ficticio de ejemplo (taller de bicicletas); nunca datos de empresas reales ni de personas.
 - La IA usada se anota en `asistenciaIA/bitacora.md`.
 
