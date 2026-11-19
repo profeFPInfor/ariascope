@@ -22,5 +22,5 @@ AriaScope: herramienta de línea de comandos de código abierto que analiza la a
 - `docs/00-documentoInicio.md`, `docs/01-analisis.md`, `docs/01b-sota.md`: documentación del proyecto.
 - `.opencode/`: agentes, skills y comandos, con versión (ver `.opencode/README.md`, `MANIFIESTO.md` y `CHANGELOG.md`).
 - `opencode.jsonc`: permisos, modelo y agente por defecto.
-- `asistenciaIA/`: bitácora del trabajo de los agentes, esquema de agentes de cada momento, documentación y diagramas. **Todo uso de IA se anota ahí.**
+- `asistenciaIA/`: bitácora del trabajo de los agentes, esquema de agentes de cada momento, documentación y diagramas. **El uso de IA que acaba en el proyecto se anota ahí, una fila por tarea.**
 - `scripts/validar_estructura.py`: valida la estructura de la semana con la misma especificación que usa la skill `validar-estructura-semanal`.

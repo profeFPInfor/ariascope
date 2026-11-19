@@ -15,6 +15,12 @@ Mientras la versión empiece por `0.`, la pieza está en prueba y puede cambiar 
 
 (vacío)
 
+## 2026-11-19 · bitácora más sencilla
+
+Conjunto 0.2.1 → **0.2.2**. La bitácora pasa de 6 a 4 columnas (fecha, agente y modelo, qué pediste, qué aceptaste) y se anota **una fila por tarea**, solo lo que acaba en el proyecto. Se quita la columna «Revisión humana» y «Dónde quedó». **Sin probar** con un modelo.
+
+- **Cambiado** `documentador` 0.2.2 → **0.2.3** (PARCHE), `guia` 0.3.1 → **0.3.2** (PARCHE) y comando `bitacora` 0.1.0 → **0.1.1** (PARCHE): proponen una fila por tarea con cuatro datos.
+
 ## 2026-11-19 · arreglos tras simular el trabajo del alumnado
 
 Conjunto 0.2.0 → **0.2.1**. Una simulación de los pasos 5 a 8 con `guia` y `documentador` (OpenCode 2.2.6, modelo `opencode/deepseek-v4.1-flash-free`) encontró cuatro problemas. Una segunda simulación, con una copia limpia y las versiones nuevas, comprobó tres arreglos: `guion-de-trabajo` usa su tabla de fechas y no busca ficheros ausentes; `documentador` hizo 2 llamadas (antes unas 10) y preguntó por cada fuente sin marcar `leído`; y `guia` reimprimió las palabras de la persona. **Sin comprobar:** la regla nueva de `obligaciones-y-ayudas` dentro de `guia`.
