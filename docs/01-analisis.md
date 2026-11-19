@@ -195,7 +195,7 @@ Las restricciones REST-01 a REST-03 no cuelgan de un objetivo concreto: acotan t
 
 **Lo que no pude comprobar:**
 
-- Las **bases reguladoras** de la ayuda elegida (BOPA de 10-jun-2025): solo he leído el extracto.
+- Las **bases reguladoras** de la ayuda elegida (Resolución de 26-may-2025, BOPA de 10-jun-2025, según el extracto): `sin leer`; solo he leído el extracto de la convocatoria.
 - Si hay una **nueva convocatoria** en 2027 y con qué fechas.
 - Otras vías (SEKUENS, Asturias Emprende): no las he revisado a fondo.
 
@@ -206,8 +206,8 @@ Fechas copiadas de `docs/fases-del-proyecto.md` del repositorio del curso el 202
 | Fase | Fechas | Tareas principales | Responsable | Hito |
 |---|---|---|---|---|
 | 1 Análisis | 6-nov a 26-nov-2026 | Sector, necesidades, requisitos, obligaciones y ayudas | Tever; el tutor revisa el PR | **H1 26-nov** |
-| 2 Diseño | 26-nov a 11-dic-2026 | Viabilidad, alcance, arquitectura de la herramienta, formato del informe | Tever; el tutor revisa el 10-dic | sin hito |
-| 3 Planificación | 10-dic-2026 a 22-ene-2027 | Cronograma, riesgos y presupuesto | Tever | **H2 21-ene** |
+| 2 Diseño | 26-nov a 10-dic-2026 | Viabilidad, alcance, arquitectura de la herramienta, formato del informe | Tever; el tutor revisa el 10-dic | sin hito |
+| 3 Planificación | 10-dic-2026 a 21-ene-2027 | Cronograma, riesgos y presupuesto | Tever | **H2 21-ene** |
 | 4 Implementación | 21-ene a 31-mar-2027 | RF-01 a RF-03 (versión mínima), después RF-04 y RF-05 | Tever | sin hito |
 | 5 Pruebas | 1-abr a 23-abr-2027 | Plan de pruebas con páginas de prueba propias y corrección de fallos | Tever | sin hito |
 | 6 Despliegue | 26-abr a 7-may-2027 | Publicar el paquete y el flujo de integración continua; guía de uso | Tever | **H3 7-may** |
@@ -221,7 +221,7 @@ flowchart LR
     G -.-> F
 ```
 
-**Cómo leerlo:** las fechas de fin y de inicio de fases contiguas coinciden o se solapan unos días (26-nov, 10 y 11-dic, 21 y 22-ene) y la fase 7 corre en paralelo a las fases 4, 5 y 6: es así en el calendario del curso. Las seis primeras fases van de izquierda a derecha y los hitos marcan las entregas. La fase 7 corre en paralelo desde febrero hasta junio (líneas de puntos).
+**Cómo leerlo:** cada fase empieza el mismo día en que acaba la anterior (26-nov, 10-dic y 21-ene) y la fase 7 corre en paralelo a las fases 4, 5 y 6, según `docs/fases-del-proyecto.md` del curso. Las seis primeras fases van de izquierda a derecha y los hitos marcan las entregas. La fase 7 corre en paralelo desde febrero hasta junio (líneas de puntos).
 
 ## 8. Glosario
 

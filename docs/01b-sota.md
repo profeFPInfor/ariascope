@@ -6,7 +6,7 @@
 >
 > **Qué se entrega en H1:** los apartados **1, 2 y 5**. Los apartados 3, 4, 6, 7 y 8 ya están rellenos como adelanto; se revisan en H2.
 >
-> **Cómo leerlo (5 minutos):** en las tablas, lo que dice la fuente va **sin marca** (es lo que ella *declara*, no lo he probado). Lo que pienso yo va marcado como **«opinión mía»** o **«deducción mía»**. `leído` = abrí la fuente; `sin leer` = no la abrí. Si no entiendes una sigla, mira el apartado 9.
+> **Cómo leerlo (5 minutos):** en las tablas, lo que dice la fuente va **sin marca** (es lo que ella *declara*, no lo he probado). Lo que pienso yo va marcado como **«opinión mía»** o **«deducción mía»**. `leído` = abrí la fuente (en el curso se llama `verificado` solo si además lo contrasté con otra); `sin leer` = no la abrí (`no leído` en el curso). Si no entiendes una sigla, mira el apartado 9.
 
 ## 1. Problema y preguntas de búsqueda (CE 1c)
 
