@@ -1,5 +1,13 @@
 # 01 · Análisis y documentación inicial (RA1)
 
+> **Estado:** borrador de la semana 2 (2026-11-19). Todavía no lo ha revisado el tutor.
+>
+> **Para qué sirve:** es el análisis de AriaScope y la evidencia del **RA1** (resultado de aprendizaje 1). Se entrega en el hito **H1** (26-nov-2026). Cada apartado responde a un **CE** (criterio de evaluación, de 1a a 1i): el número está en el título y el texto literal de los nueve, al final del documento.
+>
+> **Cómo leerlo (5 minutos):** los apartados 1 a 3 son de la semana 1; los **4 a 8** son los de la semana 2 (requisitos, obligaciones, ayuda, guion y glosario). Las marcas significan: `leído` = abrí esa fuente; `sin leer` = no la abrí; **«opinión mía»** o **«deducción mía»** = no lo dice ninguna fuente; **«pendiente»** = falta por hacer o comprobar.
+>
+> **Si no entiendes una sigla** (por ejemplo CNAE, BDNS o VPAT), mira el glosario del apartado 8. Si sigues atascado, escribe al tutor por correo.
+
 ## 1. Sector y empresas (CE 1a, 1b)
 
 **Sector:** accesibilidad digital: empresas que venden software y servicios para que webs y aplicaciones cumplan las pautas WCAG y la norma europea EN 301 549. Código CNAE: **pendiente de localizar** en el INE.
@@ -61,7 +69,7 @@ Funciones (deducidas):
 
 - Casi todas las webs analizadas tienen fallos que una herramienta automática ya detecta, así que hay trabajo por hacer.
 - La Comisión Europea indica que el Acta Europea de Accesibilidad se aplica desde el 28 de junio de 2025 y alcanza, entre otros, a sitios web y aplicaciones móviles de determinados servicios (https://accessible-eu-centre.ec.europa.eu/content-corner/news/eaa-comes-effect-june-2025-are-you-ready-2025-01-31_en · 2026-11-16 · `leído`). España la traspone con la Ley 11/2023, de 8 de mayo (https://www.boe.es/buscar/act.php?id=BOE-A-2023-11022 · 2026-11-16 · `leído` el título y la fecha de publicación).
-- **Quién está obligado depende del tipo de servicio y del tamaño** (Ley 11/2023, arts. 2.2 y 3.3, y apartado 5 de este documento): la ley cubre servicios concretos a consumidores (comercio electrónico, banca, transporte de viajeros, energía, agencias de viaje, entre otros), y una pyme pequeña o mediana de esos sectores sí lo está, mientras que una microempresa no. Las webs de las **administraciones públicas** tienen además su propia norma (Real Decreto 1112/2018). Por eso la urgencia legal varía según el cliente al que apunte AriaScope; **no he comprobado** qué clientes concretos serían.
+- **Quién está obligado varía.** Según la Ley 11/2023 (arts. 2.2 y 3.3; detalle y dudas en el apartado 5), depende de qué servicio presta la empresa a consumidores y de su tamaño. Las administraciones públicas tienen otra norma (Real Decreto 1112/2018). Qué clientes concretos tendría AriaScope: **no lo sé**.
 - **Lo que no sé:** cuántas pymes lo necesitan y si les basta una herramienta gratuita. Queda **pendiente** de contrastar con datos de INE u ONTSI y con personas del sector.
 
 ## 3. Tipo de proyecto elegido (CE 1e)
@@ -86,16 +94,16 @@ Parto de las funcionalidades de [`00-documentoInicio.md`](00-documentoInicio.md)
 
 | ID | Requisito | Tipo (funcional / no funcional / restricción) | Cómo se verifica |
 |---|---|---|---|
-| RF-01 | Dada una dirección `http` o `https`, la herramienta abre la página con Playwright, ejecuta axe-core y muestra los fallos detectados | funcional | Sobre una página de prueba con 3 fallos conocidos, el informe los lista los 3 |
+| RF-01 | Dada una dirección `http` o `https`, la herramienta abre la página con Playwright, ejecuta axe-core y muestra los fallos detectados | funcional | Sobre una página de prueba con 3 fallos conocidos (**todavía no existe**: se creará en la fase de Pruebas), el informe los lista los 3 |
 | RF-02 | Genera el informe en Markdown y en JSON | funcional | Se crean los dos ficheros y el JSON se puede leer con un analizador de JSON sin error |
 | RF-03 | El informe separa «fallo detectado» (resultados `violations` de axe-core) de «a revisar a mano» (resultados `incomplete`) | funcional | Sobre la misma página de prueba, cada grupo aparece en su sección y ningún resultado está en las dos |
 | RF-04 | Analiza una lista de direcciones leída de un fichero (no imprescindible) | funcional | Con un fichero de 3 direcciones se generan 3 informes |
-| RF-05 | Devuelve un código de salida distinto de cero si hay fallos detectados (no imprescindible) | funcional | `echo $?` vale 0 en una página sin fallos y distinto de 0 en una con fallos |
+| RF-05 | Devuelve un código de salida distinto de cero si hay fallos detectados (no imprescindible) | funcional | El código de salida (número que la orden devuelve al terminar; en la terminal se ve con `echo $?`) vale 0 en una página sin fallos y distinto de 0 en una con fallos |
 | RNF-01 | Usabilidad: cada fallo indica la regla, el elemento afectado y un enlace a su explicación | no funcional | Una persona no especialista explica con sus palabras 3 fallos del informe sin ayuda (pendiente de buscar a esa persona) |
 | RNF-02 | Rendimiento: analiza una página en menos de 60 s con conexión doméstica | no funcional | Se cronometran 10 ejecuciones sobre páginas de prueba; el umbral es propuesta mía y **pendiente de medir** |
 | RNF-03 | Privacidad: no guarda datos personales ni envía información a terceros; solo se conecta a la dirección analizada | no funcional | Revisión del código y del tráfico de red en una ejecución (pendiente) |
 | RNF-04 | Honestidad: el informe avisa de que el análisis automático no cubre toda la accesibilidad | no funcional | El texto del aviso aparece en los informes Markdown y JSON |
-| REST-01 | Plazo: primera versión mínima funcional antes de H3 (7-may-2027) | restricción | Existe el tag `h3` con RF-01 a RF-03 funcionando |
+| REST-01 | Plazo: primera versión mínima funcional antes de H3 (7-may-2027) | restricción | Existe la etiqueta (tag) `h3` de Git con RF-01 a RF-03 funcionando |
 | REST-02 | Tecnología: TypeScript y Node.js, Playwright y axe-core, todas de código abierto y sin servicios de pago | restricción | `package.json` lista solo esas dependencias y sus licencias son de código abierto (pendiente de comprobar cada licencia) |
 | REST-03 | Uso: solo se analizan páginas propias o de prueba | restricción | El `README.md` lo indica y las pruebas usan solo páginas de prueba propias |
 
@@ -110,7 +118,7 @@ Parto de las funcionalidades de [`00-documentoInicio.md`](00-documentoInicio.md)
 
 ### Matriz de trazabilidad
 
-En H1 solo se unen objetivo y requisito. El resto se completa en H2 y H3; `ariascope <url>` es un **nombre provisional** de la orden.
+Cada fila se lee así: el **objetivo** (lo que quiero conseguir) se concreta en un **requisito** (lo que debe cumplir la herramienta); las otras tres columnas dicen dónde se verá y cómo se comprobará. En H1 solo se unen objetivo y requisito. El resto se completa en H2 y H3; `ariascope <url>` es un **nombre provisional** de la orden.
 
 | Objetivo | Requisito | Caso de uso | Pantalla o endpoint | Prueba o indicador |
 |---|---|---|---|---|
@@ -147,15 +155,15 @@ Las restricciones REST-01 a REST-03 no cuelgan de un objetivo concreto: acotan t
 - **Ley 31/1995:** la empresa debe proteger a su plantilla, evaluar los riesgos y planificar la prevención.
 - **Ley 11/2023, arts. 2.2 y 3.3:** la obligación depende del **tipo de servicio** y del **tamaño**. Solo alcanza a servicios dirigidos a **consumidores**, y en algunos solo a una parte (art. 2.2, según lo leído el 2026-11-19):
 
-  | Servicio (art. 2.2) | Qué parte cubre |
-  |---|---|
-  | Comercio electrónico | El texto leído lo cita sin más desarrollo |
-  | Servicios bancarios a consumidores | Los servicios bancarios a consumidores |
-  | Comunicaciones electrónicas, servicios de acceso a comunicación audiovisual, libros electrónicos y redes sociales | El servicio (con la excepción de los de máquina a máquina en comunicaciones) |
-  | Transporte de viajeros (aéreo, autobús, ferrocarril, marítimo) | Solo sitios web, apps, billetes electrónicos, información de viaje y terminales interactivos; el transporte urbano, suburbano y regional, solo los elementos de un inciso que no he podido identificar |
-  | Suministro de electricidad, agua y gas a consumidores; agencias de viajes y turoperadores | Solo sitios web y apps |
+  **Se aplica al servicio completo:** comunicaciones electrónicas (salvo las de máquina a máquina), acceso a servicios audiovisuales, servicios bancarios a consumidores, libros electrónicos, comercio electrónico (el texto leído lo cita sin más detalle) y redes sociales.
 
-  Una web de una empresa de **otro sector** (por ejemplo, un taller o una consultora que solo informa) no entra en esta lista (deducción mía: otras normas podrían afectarle y no las he buscado). El art. 3.3 dice que «las microempresas que presten servicios estarán exentas» de los requisitos. **Lo deduzco yo:** una pyme pequeña o mediana que venda por internet a consumidores **sí** estaría obligada y una microempresa **no**. No he leído la definición de «microempresa» (la ley la usa sin definirla en los artículos que leí) ni los anexos técnicos.
+  **Se aplica solo a la web y a las apps:** electricidad, agua y gas a consumidores, y agencias de viajes y turoperadores. En el transporte de viajeros (aéreo, autobús, ferrocarril y marítimo) se añaden los billetes electrónicos, la información de viaje y los terminales interactivos; el transporte urbano y regional tiene un caso especial que no he podido identificar.
+
+  **Lo que dice la ley:** el art. 3.3 afirma que «las microempresas que presten servicios estarán exentas» de los requisitos.
+
+  **Lo que deduzco yo:** una pyme pequeña o mediana que venda por internet a consumidores sí estaría obligada y una microempresa no. Una web de un sector que no está en la lista no entra en esta ley, aunque otras normas podrían afectarle: no las he buscado.
+
+  **Lo que no he leído:** la definición de «microempresa» (la ley la usa sin definirla en los artículos que leí) ni los anexos técnicos.
 
 **Lo que AriaScope hace por sí mismo:** el proyecto es una herramienta gratuita de código abierto y no emite facturas, así que no le afecta la norma de facturación con software (Veri\*Factu). Si algún día cobrara por soporte o servicios, entrarían el IVA y la tributación de quien factura: **no lo he estudiado**.
 
@@ -213,7 +221,7 @@ flowchart LR
     G -.-> F
 ```
 
-**Cómo leerlo:** las seis primeras fases van de izquierda a derecha y los hitos marcan las entregas. La fase 7 corre en paralelo desde febrero hasta junio (líneas de puntos).
+**Cómo leerlo:** las fases 2 y 3 se solapan dos días (10 y 11-dic) y la 7 corre en paralelo a las fases 4, 5 y 6: es así en el calendario del curso. Las seis primeras fases van de izquierda a derecha y los hitos marcan las entregas. La fase 7 corre en paralelo desde febrero hasta junio (líneas de puntos).
 
 ## 8. Glosario
 
@@ -228,6 +236,21 @@ Los sinónimos de la tercera columna son **decisiones mías** para que todos los
 | Fallo detectado | Problema que el motor de reglas confirma sin ayuda de una persona (en axe-core, `violations`) | «error», «bug», «warning» |
 | A revisar a mano | Resultado que el motor no puede decidir y que una persona debe comprobar (en axe-core, `incomplete`) | «aviso», «posible fallo» |
 | Integración continua | Proceso automático que ejecuta comprobaciones cada vez que se sube código al repositorio | «CI/CD» sin explicar |
+| CE | Criterio de evaluación: cada una de las nueve cosas (1a a 1i) que se evalúan en H1. Están al final del documento | — |
+| RA1 | Resultado de aprendizaje 1 del módulo; agrupa los criterios 1a a 1i | — |
+| H1, H2, H3 | Los tres hitos de entrega: 26-nov-2026, 21-ene-2027 y 7-may-2027 | «entregas» sin más |
+| CNAE | Clasificación Nacional de Actividades Económicas, el código que da el INE a cada actividad | — |
+| INE y ONTSI | INE: Instituto Nacional de Estadística. ONTSI: Observatorio Nacional de Tecnología y Sociedad, fuente pública de datos sobre digitalización | — |
+| BOE, BOPA y BDNS | Boletín Oficial del Estado, Boletín Oficial del Principado de Asturias y Base de Datos Nacional de Subvenciones: donde se publican las leyes y las ayudas | — |
+| VPAT | Voluntary Product Accessibility Template: documento en el que un fabricante declara cómo cumple su producto los requisitos de accesibilidad | — |
+| ENAC | Entidad Nacional de Acreditación: organismo que acredita a las entidades que evalúan o certifican | — |
+| IRPF y SAT | IRPF: Impuesto sobre la Renta de las Personas Físicas. SAT: sociedad agraria de transformación, un tipo de entidad agraria | — |
+| Pyme y microempresa | Pyme: pequeña y mediana empresa. Microempresa: la más pequeña de las categorías; **no he leído su definición legal** | — |
+| RF, RNF y REST | Requisito funcional (qué hace), no funcional (cómo lo hace) y restricción (límite impuesto: plazo, tecnología…) | «REST» como API REST |
+| Código de salida | Número que una orden devuelve al terminar: 0 suele significar «todo bien» y otro valor, que hubo un problema | — |
+| Etiqueta (tag) de Git | Marca fija que señala una versión concreta del repositorio, por ejemplo la que se entrega en un hito | — |
+| JSON | Formato de texto para guardar datos de forma que un programa los pueda leer | — |
+| Pull Request | Propuesta de cambio en GitHub: el tutor la revisa antes de que se integre en la rama principal `main` | «PR» sin explicar |
 
 ---
 
