@@ -1,7 +1,6 @@
 ---
 name: Corrección del tutor
 about: Una corrección que pide el tutor en la revisión semanal (la abre el tutor)
-labels: 'tipo:correccion-tutor'
 ---
 
 ## Qué corregir
@@ -11,11 +10,6 @@ labels: 'tipo:correccion-tutor'
 [Fichero, commit o PR.]
 
 ## Por qué
-
-## Gravedad
-
-- [ ] `gravedad:bloqueante` (antes de seguir con lo que depende de esto y, como máximo, antes de la siguiente revisión semanal)
-- [ ] `gravedad:mejora` (antes del siguiente hito)
 
 ## Cómo se comprobará
 

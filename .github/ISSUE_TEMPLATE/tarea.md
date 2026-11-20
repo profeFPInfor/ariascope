@@ -1,7 +1,6 @@
 ---
 name: Tarea
 about: Una tarea o historia de usuario del tablero
-labels: ''
 ---
 
 ## Qué se hace
@@ -19,7 +18,7 @@ labels: ''
 
 ## Estimación (desde H2)
 
-- Horas estimadas: ___ (etiqueta `est:1h`, `est:2h`, `est:4h` o `est:8h`; si pasa de 8 h, divide la tarea)
+- Horas estimadas: ___ (1, 2, 4 u 8 horas; si pasa de 8 h, divide la tarea)
 - Horas reales (opcional, al cerrarla): ___
 
-Fase: `fase:` (analisis, diseno, planificacion, implementacion, pruebas, despliegue, mantenimiento)
+Fase: ___ (análisis, diseño, planificación, implementación, pruebas, despliegue, mantenimiento)

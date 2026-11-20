@@ -1,7 +1,6 @@
 ---
 name: Cambio
 about: Un cambio en requisitos, alcance o plan
-labels: 'tipo:cambio'
 ---
 
 ## Qué cambia

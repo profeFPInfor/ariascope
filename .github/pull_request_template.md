@@ -8,7 +8,7 @@ Closes #
 
 ## ¿Necesita revisión previa del tutor?
 
-- [ ] **Sí** (pon la etiqueta `necesita-tutor` y no lo integres hasta que lo apruebe): hito, seguridad, credenciales, datos personales, despliegue, configuración o primer PR.
+- [ ] **Sí** (pídeselo al tutor en **Reviewers** y no lo integres hasta su *Approve*): hito, seguridad, credenciales, datos personales, despliegue, configuración o primer PR.
 - [ ] **No**: se integra cuando se cumpla la lista de abajo y el tutor lo revisa después, en la revisión semanal.
 
 ## Corrección pedida por el tutor (solo si aplica)
