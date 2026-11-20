@@ -1,7 +1,6 @@
 ---
 name: Incidencia
 about: Un fallo o problema detectado
-labels: 'tipo:incidencia'
 ---
 
 ## Qué ocurre
